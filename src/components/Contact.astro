@@ -5,12 +5,12 @@ import Icon from './Icon.astro';
 
 <section id="contact" class="contact" aria-labelledby="contact-heading" data-reveal>
   <div class="contact-inner">
-    <p class="kicker contact-kicker">09 — Contact</p>
+    <p class="kicker contact-kicker">08 — Contact</p>
     <h2 id="contact-heading" class="section-title contact-title">
       Let's build something worth belonging to.
     </h2>
     <p class="contact-lede text-muted">
-      Tell me about your audience, your goals, and where things currently stand — I'll follow up
+      Tell me about your brand, your platforms, and where things currently stand — I'll follow up
       within a couple of days with next steps.
     </p>
     <div class="contact-actions">
@@ -18,15 +18,8 @@ import Icon from './Icon.astro';
         <Icon name="mail" size={17} />
         Email
       </a>
-      <a class="btn btn-secondary" href={site.social.linkedin}>
-        <Icon name="linkedin" size={17} />
-        LinkedIn
-      </a>
-      <a class="btn btn-secondary" href={site.social.schedule}>
-        <Icon name="calendar" size={17} />
-        Schedule a Call
-      </a>
     </div>
+    <p class="contact-meta text-muted">{site.location} · {site.handle}</p>
   </div>
 </section>
 
@@ -68,5 +61,10 @@ import Icon from './Icon.astro';
     flex-wrap: wrap;
     justify-content: center;
     gap: 14px;
+  }
+
+  .contact-meta {
+    margin: 22px 0 0;
+    font-size: 13.5px;
   }
 </style>

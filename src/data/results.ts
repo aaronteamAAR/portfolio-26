@@ -4,9 +4,9 @@ export interface Result {
 }
 
 export const results: Result[] = [
-  { value: '120+', label: 'Communities managed' },
-  { value: '6.2M', label: 'Followers grown' },
-  { value: '300+', label: 'Campaigns delivered' },
-  { value: '7.4%', label: 'Avg. engagement rate' },
-  { value: '8', label: 'Years of experience' },
+  { value: '500M+', label: 'Organic views generated' },
+  { value: '615M+', label: 'Cross-platform impressions' },
+  { value: '2.01M', label: 'Follower community built (Aura Displays)' },
+  { value: '101M', label: 'Views on a single Instagram Reel' },
+  { value: '$41.6K', label: 'Tracked sales from social referrals' },
 ];

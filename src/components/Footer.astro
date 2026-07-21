@@ -8,23 +8,12 @@ const year = new Date().getFullYear();
 <footer class="site-footer">
   <div class="footer-inner">
     <p class="footer-brand">{site.name}<span class="footer-brand-dot">.</span></p>
-    <ul class="footer-social">
-      <li>
-        <a class="btn btn-secondary btn-icon" href={site.social.instagram} aria-label="Instagram">
-          <Icon name="instagram" size={18} />
-        </a>
-      </li>
-      <li>
-        <a class="btn btn-secondary btn-icon" href={site.social.linkedin} aria-label="LinkedIn">
-          <Icon name="linkedin" size={18} />
-        </a>
-      </li>
-      <li>
-        <a class="btn btn-secondary btn-icon" href={`mailto:${site.email}`} aria-label="Email">
-          <Icon name="mail" size={18} />
-        </a>
-      </li>
-    </ul>
+    <p class="footer-meta text-muted">{site.location} · {site.handle}</p>
+    <div class="footer-actions">
+      <a class="btn btn-secondary btn-icon" href={`mailto:${site.email}`} aria-label="Email">
+        <Icon name="mail" size={18} />
+      </a>
+    </div>
     <p class="footer-copy text-muted">&copy; {year} {site.name}. All rights reserved.</p>
   </div>
 </footer>
@@ -52,7 +41,12 @@ const year = new Date().getFullYear();
     color: var(--color-accent);
   }
 
-  .footer-social {
+  .footer-meta {
+    font-size: 13px;
+    margin: 0;
+  }
+
+  .footer-actions {
     display: flex;
     gap: 10px;
   }

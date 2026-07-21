@@ -1,25 +1,36 @@
 ---
-import { skills } from '../data/skills';
+import { skillGroups, education } from '../data/skills';
 ---
 
 <section id="skills" class="section skills" aria-labelledby="skills-heading" data-reveal>
   <div class="skills-grid">
     <div>
-      <p class="kicker">07 — Skills & Tools</p>
+      <p class="kicker">06 — Skills & Tools</p>
       <h2 id="skills-heading" class="section-title skills-title">
         The platforms and craft behind the work.
       </h2>
     </div>
-    <ul class="skills-list">
+    <div class="skill-groups">
       {
-        skills.map((skill) => (
-          <li>
-            <span class="tag tag-outline">{skill}</span>
-          </li>
+        skillGroups.map((group) => (
+          <div class="skill-group">
+            <p class="skill-group-title">{group.title}</p>
+            <ul class="skill-tags">
+              {group.items.map((item) => (
+                <li>
+                  <span class="tag tag-outline">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         ))
       }
-    </ul>
+    </div>
   </div>
+  <p class="skills-education text-muted">
+    <span class="skills-education-label">Education</span>
+    {education.degree} · {education.note}
+  </p>
 </section>
 
 <style>
@@ -34,11 +45,40 @@ import { skills } from '../data/skills';
     margin-top: 18px;
   }
 
-  .skills-list {
+  .skill-groups {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 26px;
+  }
+
+  .skill-group-title {
+    font-family: var(--font-heading);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-text);
+    margin: 0 0 11px;
+  }
+
+  .skill-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 11px;
-    align-content: flex-start;
+    gap: 8px;
+  }
+
+  .skills-education {
+    margin: 40px 0 0;
+    padding-top: 22px;
+    border-top: 1px solid var(--color-divider);
+    font-size: 13.5px;
+  }
+
+  .skills-education-label {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    color: var(--color-text);
+    margin-right: 8px;
   }
 
   @media (max-width: 860px) {

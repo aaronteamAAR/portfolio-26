@@ -1,18 +1,16 @@
 export const site = {
-  name: 'Aaron Chris',
+  name: 'Aaron Chris Chuku',
   role: 'Social Media & Community Manager',
-  email: 'aaronchrischuku@gnmail.com',
+  roleFull: 'Social Media Manager · Community Manager · Short-Form Content Strategist',
+  email: 'aaronchrischuku@gmail.com',
+  handle: '@ogazilamm',
+  location: 'Remote (open worldwide)',
   description:
-    'Aaron Chris is a social media and community manager helping ambitious brands, startups, and creators turn scattered audiences into loyal, engaged communities.',
-  social: {
-    instagram: '#',
-    linkedin: '#',
-    schedule: '#',
-  },
+    'Aaron Chris Chuku is a social media and community manager specializing in organic growth for e-commerce and consumer-tech brands — generating 500M+ organic views and 615M+ cross-platform impressions across TikTok, Instagram, YouTube, Facebook, Threads, and Pinterest.',
   heroStats: [
-    { value: '8M+', label: 'Followers grown' },
-    { value: '4+', label: 'Brands partnered' },
-    { value: '3 yrs', label: 'Experience' },
+    { value: '500M+', label: 'Organic views generated' },
+    { value: '615M+', label: 'Cross-platform impressions' },
+    { value: '3 yrs', label: 'Experience' },
   ],
 } as const;
 

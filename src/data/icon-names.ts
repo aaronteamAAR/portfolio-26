@@ -1,9 +1,6 @@
 export type IconName =
   | 'arrow-right'
   | 'mail'
-  | 'linkedin'
-  | 'calendar'
-  | 'instagram'
   | 'chevron-down'
   | 'share'
   | 'users'
@@ -11,5 +8,5 @@ export type IconName =
   | 'trending-up'
   | 'megaphone'
   | 'bar-chart'
-  | 'grid'
-  | 'lightbulb';
+  | 'lightbulb'
+  | 'video';
