@@ -1,0 +1,50 @@
+---
+import { skills } from '../data/skills';
+---
+
+<section id="skills" class="section skills" aria-labelledby="skills-heading" data-reveal>
+  <div class="skills-grid">
+    <div>
+      <p class="kicker">07 — Skills & Tools</p>
+      <h2 id="skills-heading" class="section-title skills-title">
+        The platforms and craft behind the work.
+      </h2>
+    </div>
+    <ul class="skills-list">
+      {
+        skills.map((skill) => (
+          <li>
+            <span class="tag tag-outline">{skill}</span>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
+
+<style>
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.4fr;
+    gap: clamp(32px, 5vw, 80px);
+    align-items: start;
+  }
+
+  .skills-title {
+    margin-top: 18px;
+  }
+
+  .skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 11px;
+    align-content: flex-start;
+  }
+
+  @media (max-width: 860px) {
+    .skills-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-6);
+    }
+  }
+</style>

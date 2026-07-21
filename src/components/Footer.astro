@@ -1,0 +1,64 @@
+---
+import { site } from '../data/site';
+import Icon from './Icon.astro';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-brand">{site.name}<span class="footer-brand-dot">.</span></p>
+    <ul class="footer-social">
+      <li>
+        <a class="btn btn-secondary btn-icon" href={site.social.instagram} aria-label="Instagram">
+          <Icon name="instagram" size={18} />
+        </a>
+      </li>
+      <li>
+        <a class="btn btn-secondary btn-icon" href={site.social.linkedin} aria-label="LinkedIn">
+          <Icon name="linkedin" size={18} />
+        </a>
+      </li>
+      <li>
+        <a class="btn btn-secondary btn-icon" href={`mailto:${site.email}`} aria-label="Email">
+          <Icon name="mail" size={18} />
+        </a>
+      </li>
+    </ul>
+    <p class="footer-copy text-muted">&copy; {year} {site.name}. All rights reserved.</p>
+  </div>
+</footer>
+
+<style>
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 44px var(--section-pad-x);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .footer-brand {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 18px;
+    margin: 0;
+  }
+
+  .footer-brand-dot {
+    color: var(--color-accent);
+  }
+
+  .footer-social {
+    display: flex;
+    gap: 10px;
+  }
+
+  .footer-copy {
+    font-size: 12.5px;
+    margin: 0;
+  }
+</style>

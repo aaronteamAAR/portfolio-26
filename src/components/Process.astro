@@ -1,0 +1,58 @@
+---
+import { process } from '../data/process';
+---
+
+<section id="process" class="section process" aria-labelledby="process-heading" data-reveal>
+  <p class="kicker">06 — Process</p>
+  <h2 id="process-heading" class="section-title process-title">
+    A simple path from first call to steady growth.
+  </h2>
+  <ol class="process-grid">
+    {
+      process.map((item) => (
+        <li>
+          <p class="process-step tnum">{item.step}</p>
+          <hr class="hr process-divider" />
+          <h3 class="process-card-title">{item.title}</h3>
+          <p class="process-description text-muted">{item.description}</p>
+        </li>
+      ))
+    }
+  </ol>
+</section>
+
+<style>
+  .process-title {
+    margin-bottom: 56px;
+    max-width: 18ch;
+  }
+
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+  }
+
+  .process-step {
+    font-family: var(--font-heading);
+    font-size: 15px;
+    letter-spacing: 0.1em;
+    color: var(--color-accent-ink);
+    margin: 0;
+  }
+
+  .process-divider {
+    margin: 16px 0 22px;
+  }
+
+  .process-card-title {
+    font-size: 22px;
+    margin: 0 0 10px;
+  }
+
+  .process-description {
+    font-size: 14.5px;
+    line-height: 1.7;
+    margin: 0;
+  }
+</style>

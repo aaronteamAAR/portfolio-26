@@ -1,0 +1,67 @@
+---
+import { services } from '../data/services';
+import Icon, { type IconName } from './Icon.astro';
+---
+
+<section id="services" class="section services" aria-labelledby="services-heading" data-reveal>
+  <div class="services-header">
+    <div>
+      <p class="kicker">02 — Services</p>
+      <h2 id="services-heading" class="section-title services-title">
+        What I can take off your plate.
+      </h2>
+    </div>
+    <p class="services-lede text-muted">
+      Engagements are shaped around your goals — pick a lane or combine several into a retained
+      partnership.
+    </p>
+  </div>
+  <ul class="services-grid">
+    {
+      services.map((service) => (
+        <li class="card svc-card">
+          <span class="card-kicker" aria-hidden="true">
+            <Icon name={service.icon as IconName} size={26} />
+          </span>
+          <h3 class="card-title">{service.title}</h3>
+          <p class="card-body text-muted">{service.description}</p>
+        </li>
+      ))
+    }
+  </ul>
+</section>
+
+<style>
+  .services-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 48px;
+  }
+
+  .services-title {
+    margin-top: 16px;
+    max-width: 16ch;
+  }
+
+  .services-lede {
+    font-size: 16px;
+    line-height: 1.7;
+    max-width: 34ch;
+    margin: 0;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 18px;
+  }
+
+  .svc-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: color-mix(in srgb, var(--color-accent) 55%, transparent);
+  }
+</style>

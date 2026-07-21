@@ -1,0 +1,82 @@
+---
+const tags = [
+  'Strategy',
+  'Community Ops',
+  'Content Systems',
+  'Growth',
+  'Copywriting',
+  'Analytics',
+  'Brand Voice',
+];
+---
+
+<section id="about" class="section about" aria-labelledby="about-heading" data-reveal>
+  <hr class="hr" style="margin-bottom: var(--space-8);" />
+  <div class="about-grid">
+    <div>
+      <p class="kicker">01 — About</p>
+      <h2 id="about-heading" class="section-title about-title">
+        A partner for brands that take their audience seriously.
+      </h2>
+    </div>
+    <div class="about-copy">
+      <p>
+        I'm Aaron Chris, a social media and community manager who's spent the last eight years
+        helping brands turn passive followers into people who show up, talk back, and stick
+        around. I've run channels for DTC labels, B2B platforms, and creator-led businesses —
+        and the common thread is always the same: growth that holds up because the community
+        underneath it is real.
+      </p>
+      <p>
+        My work sits at the intersection of <em>strategy</em> and <em>craft</em> — the plan that
+        gets your team aligned, and the daily execution that actually earns attention. I write
+        the calendar, run the campaigns, moderate the conversations, and report back on what
+        moved the needle, so you always know exactly what you're getting for the investment.
+      </p>
+      <ul class="about-tags">
+        {
+          tags.map((tag) => (
+            <li>
+              <span class="tag tag-outline">{tag}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.4fr;
+    gap: clamp(32px, 5vw, 80px);
+    align-items: start;
+  }
+
+  .about-title {
+    margin-top: 18px;
+  }
+
+  .about-copy p {
+    font-family: var(--font-body);
+    font-size: clamp(16px, 1.5vw, 18px);
+    line-height: 1.75;
+    text-align: justify;
+    hyphens: auto;
+  }
+
+  .about-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 32px;
+  }
+
+  @media (max-width: 860px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-6);
+    }
+  }
+</style>

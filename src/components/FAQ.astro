@@ -1,0 +1,79 @@
+---
+import { faq } from '../data/faq';
+import Icon from './Icon.astro';
+---
+
+<section id="faq" class="section faq" aria-labelledby="faq-heading" data-reveal>
+  <p class="kicker faq-kicker">08 — FAQ</p>
+  <h2 id="faq-heading" class="section-title faq-title">Questions, answered.</h2>
+  <div class="faq-list">
+    {
+      faq.map((item) => (
+        <details class="faq-item">
+          <summary class="faq-summary">
+            <span>{item.question}</span>
+            <Icon name="chevron-down" size={20} />
+          </summary>
+          <p class="faq-answer text-muted">{item.answer}</p>
+        </details>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .faq {
+    max-width: 820px;
+  }
+
+  .faq-kicker,
+  .faq-title {
+    text-align: center;
+  }
+
+  .faq-title {
+    margin-bottom: 44px;
+  }
+
+  .faq-list {
+    border-top: 1px solid var(--color-divider);
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--color-divider);
+  }
+
+  .faq-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 24px 4px;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 20px;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .faq-summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-summary :global(svg) {
+    flex-shrink: 0;
+    color: var(--color-accent);
+    transition: transform 0.3s;
+  }
+
+  .faq-item[open] .faq-summary :global(svg) {
+    transform: rotate(180deg);
+  }
+
+  .faq-answer {
+    font-size: 15.5px;
+    line-height: 1.75;
+    padding: 0 4px 26px;
+    margin: 0;
+  }
+</style>

@@ -1,0 +1,99 @@
+---
+import { site, navLinks } from '../data/site';
+---
+
+<header class="site-header">
+  <nav class="nav" aria-label="Primary">
+    <a href="#hero" class="nav-brand">{site.name}<span class="nav-brand-dot">.</span></a>
+    <div class="nav-links">
+      {
+        navLinks.map((link) => (
+          <a class="nav-link" data-nav={link.id} href={`#${link.id}`}>
+            {link.label}
+          </a>
+        ))
+      }
+    </div>
+    <a class="btn btn-primary nav-cta" href="#contact">Work With Me</a>
+  </nav>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    padding: 18px clamp(20px, 5vw, 56px);
+    border-bottom: 1px solid var(--color-divider);
+    background: color-mix(in srgb, var(--color-bg) 82%, transparent);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+
+  .nav-brand {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 19px;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+    color: var(--color-text);
+    margin-right: auto;
+  }
+
+  .nav-brand-dot {
+    color: var(--color-accent);
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .nav-link {
+    position: relative;
+    font-family: var(--font-heading);
+    font-size: 15px;
+    text-decoration: none;
+    color: var(--color-text);
+    transition: color 0.25s;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 100%;
+    bottom: -5px;
+    height: 1px;
+    background: var(--color-accent);
+    transition: right 0.3s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+
+  .nav-link[data-active='true'] {
+    color: var(--color-accent-ink);
+  }
+
+  .nav-link[data-active='true']::after,
+  .nav-link:hover::after {
+    right: 0;
+  }
+
+  .nav-cta {
+    padding: 9px 20px;
+    font-size: 14px;
+  }
+
+  @media (max-width: 860px) {
+    .nav-links,
+    .nav-cta {
+      display: none;
+    }
+  }
+</style>
