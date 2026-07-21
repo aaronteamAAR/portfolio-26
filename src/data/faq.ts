@@ -7,7 +7,7 @@ export const faq: FaqItem[] = [
   {
     question: 'What kinds of clients do you work with?',
     answer:
-      'Mostly e-commerce and consumer-tech brands, plus founders and Shopify stores who want organic content to be a real growth channel — not an afterthought.',
+      "Mostly e-commerce and consumer-tech brands, plus founders and Shopify stores — but the process adapts to any brand or industry. Give me a product and an audience, and I'll figure out the platforms and voice that fit.",
   },
   {
     question: 'Do you work retained or per-project?',
