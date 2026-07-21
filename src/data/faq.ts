@@ -7,7 +7,7 @@ export const faq: FaqItem[] = [
   {
     question: 'What kinds of clients do you work with?',
     answer:
-      "Mostly ambitious startups, creators, and technology companies who care about building a real community rather than chasing a follower count. If you have a point of view worth gathering people around, we'll get along.",
+      'Mostly e-commerce and consumer-tech brands, plus founders and Shopify stores who want organic content to be a real growth channel — not an afterthought.',
   },
   {
     question: 'Do you work retained or per-project?',
@@ -17,7 +17,7 @@ export const faq: FaqItem[] = [
   {
     question: 'Which platforms do you specialize in?',
     answer:
-      "Instagram, LinkedIn, TikTok, and X for content and growth, plus Discord, Slack, and Reddit for community. I'll always recommend the smallest set of platforms that gets you the outcome, not the most.",
+      "TikTok, Instagram, and YouTube for short-form growth, plus Facebook, Threads, and Pinterest for distribution. I'll always recommend the platforms that match where your audience actually is.",
   },
   {
     question: 'How involved will my team need to be?',
