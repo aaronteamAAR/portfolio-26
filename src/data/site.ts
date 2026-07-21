@@ -1,5 +1,5 @@
 export const site = {
-  name: 'Aaron Chris Chuku',
+  name: 'Aaron Chris',
   role: 'Social Media & Community Manager',
   roleFull: 'Social Media Manager · Community Manager · Short-Form Content Strategist',
   email: 'aaronchrischuku@gmail.com',
