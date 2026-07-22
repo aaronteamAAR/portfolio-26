@@ -38,6 +38,8 @@ export const work: WorkItem[] = [
     metric: '+257%',
     metricLabel: 'TikTok view growth, 178.45M total impressions (+664%)',
     tags: ['TikTok', 'Instagram', 'Analytics'],
+    coverImage: '/images/TPM.png',
+    coverFit: 'contain',
   },
   {
     id: 'work-acco',
@@ -64,5 +66,7 @@ export const work: WorkItem[] = [
     metric: '10M+',
     metricLabel: 'views generated in 2026 to date',
     tags: ['Instagram', 'Shopify', 'Content Strategy'],
+    coverImage: '/images/shopify.png',
+    coverFit: 'contain',
   },
 ];
