@@ -70,9 +70,8 @@ All metadata is centralized in `src/components/SEO.astro`, rendered inside `<hea
 duplicate any of this.
 
 - **Domain**: canonical URLs, the sitemap, `robots.txt`, and absolute OG/Twitter image URLs all
-  derive from `site` in `astro.config.mjs`, currently a placeholder
-  (`https://aaronchris.com`). **Update this to the real production domain before deploying** —
-  everything else here follows from it automatically.
+  derive from `site` in `astro.config.mjs`, set to `https://aaronchris.vercel.app` — update it
+  there if the production domain ever changes and everything else here follows automatically.
 - **Social preview image**: `SEO.astro` checks `public/og-image.png` at build time and only
   emits `og:image`/`twitter:image` tags if that file exists — so there's never a broken preview
   link. Drop a PNG or JPG there (1200×630 recommended) and the tags activate on the next build,

@@ -17,7 +17,7 @@ import MobileCTA from '../components/MobileCTA.astro';
 import { site } from '../data/site';
 import { work } from '../data/work';
 
-const siteUrl = Astro.site?.toString() ?? 'https://aaronchris.com/';
+const siteUrl = Astro.site?.toString() ?? 'https://aaronchris.vercel.app/';
 
 const portraitPath = '/images/portrait.jpg';
 const hasPortrait = fs.existsSync(path.join(process.cwd(), 'public', portraitPath));
