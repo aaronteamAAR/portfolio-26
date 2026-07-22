@@ -1,4 +1,6 @@
 ---
+import fs from 'node:fs';
+import path from 'node:path';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Nav from '../components/Nav.astro';
 import Hero from '../components/Hero.astro';
@@ -13,11 +15,46 @@ import Contact from '../components/Contact.astro';
 import Footer from '../components/Footer.astro';
 import MobileCTA from '../components/MobileCTA.astro';
 import { site } from '../data/site';
+import { work } from '../data/work';
+
+const siteUrl = Astro.site?.toString() ?? 'https://aaronchris.com/';
+
+const portraitPath = '/images/portrait.jpg';
+const hasPortrait = fs.existsSync(path.join(process.cwd(), 'public', portraitPath));
+
+// Freelance/independent clients isn't a real named organization, so it's
+// excluded from worksFor to keep the structured data accurate.
+const employers = work.filter((item) => item.client !== 'Independent Clients');
+
+const structuredData = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: site.name,
+    url: siteUrl,
+    description: site.description,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: site.name,
+    jobTitle: site.roleFull,
+    description: site.description,
+    email: `mailto:${site.email}`,
+    url: siteUrl,
+    ...(hasPortrait ? { image: new URL(portraitPath, siteUrl).toString() } : {}),
+    worksFor: employers.map((item) => ({
+      '@type': 'Organization',
+      name: item.client,
+    })),
+  },
+];
 ---
 
 <BaseLayout
   title={`${site.name} — ${site.roleFull}`}
   description={site.description}
+  structuredData={structuredData}
 >
   <Nav />
   <main id="main-content">

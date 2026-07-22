@@ -9,35 +9,25 @@ import '@fontsource/playfair-display/400-italic.css';
 import '@fontsource/playfair-display/500-italic.css';
 import '../styles/tokens.css';
 import '../styles/global.css';
+import SEO from '../components/SEO.astro';
+import type { SEOProps } from '../types/seo';
 
-export interface Props {
-  title: string;
-  description: string;
-}
+export interface Props extends SEOProps {}
 
-const { title, description } = Astro.props;
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const { title, description, image, imageAlt, noindex, structuredData } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="canonical" href={canonicalURL} />
-    <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
-    <meta name="description" content={description} />
-    <meta name="theme-color" content="#f3f2f2" />
-
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:url" content={canonicalURL} />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
+    <SEO
+      title={title}
+      description={description}
+      image={image}
+      imageAlt={imageAlt}
+      noindex={noindex}
+      structuredData={structuredData}
+    />
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
