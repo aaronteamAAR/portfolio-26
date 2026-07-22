@@ -11,6 +11,8 @@ import ImagePlaceholder from './ImagePlaceholder.astro';
       work.map((item) => (
         <li class="work-card">
           <ImagePlaceholder
+            src={item.coverImage}
+            fit={item.coverFit}
             shape="rect"
             ratio="16 / 10"
             label={`Add cover image: ${item.client}`}

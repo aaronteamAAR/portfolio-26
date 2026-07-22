@@ -5,10 +5,19 @@ export interface Props {
   label?: string;
   shape?: 'rect' | 'circle';
   ratio?: string;
+  fit?: 'cover' | 'contain';
   class?: string;
 }
 
-const { src, alt = '', label = 'Image', shape = 'rect', ratio = '1 / 1', class: className } = Astro.props;
+const {
+  src,
+  alt = '',
+  label = 'Image',
+  shape = 'rect',
+  ratio = '1 / 1',
+  fit = 'cover',
+  class: className,
+} = Astro.props;
 ---
 
 {
@@ -16,8 +25,8 @@ const { src, alt = '', label = 'Image', shape = 'rect', ratio = '1 / 1', class: 
     <img
       src={src}
       alt={alt}
-      class:list={['media', `media-${shape}`, className]}
-      style={{ aspectRatio: ratio }}
+      class:list={['media', `media-${shape}`, fit === 'contain' && 'media-contain', className]}
+      style={{ aspectRatio: ratio, objectFit: fit }}
       loading="lazy"
       decoding="async"
     />
@@ -59,6 +68,12 @@ const { src, alt = '', label = 'Image', shape = 'rect', ratio = '1 / 1', class: 
 
   .media-circle {
     border-radius: 50%;
+  }
+
+  .media-contain {
+    box-sizing: border-box;
+    padding: 15%;
+    background: var(--color-neutral-100);
   }
 
   .media-placeholder {

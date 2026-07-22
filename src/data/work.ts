@@ -8,6 +8,8 @@ export interface WorkItem {
   metric: string;
   metricLabel: string;
   tags: string[];
+  coverImage?: string;
+  coverFit?: 'cover' | 'contain';
 }
 
 export const work: WorkItem[] = [
@@ -22,6 +24,8 @@ export const work: WorkItem[] = [
     metric: '2.01M',
     metricLabel: 'followers across six platforms, 437.49M impressions',
     tags: ['TikTok', 'Instagram', 'YouTube'],
+    coverImage: '/images/aura-logo.png',
+    coverFit: 'contain',
   },
   {
     id: 'work-tpm',
@@ -46,6 +50,8 @@ export const work: WorkItem[] = [
     metric: '3M',
     metricLabel: 'views on a single Reel, 1.49M unique accounts reached',
     tags: ['Instagram', 'Reels', 'Organic Growth'],
+    coverImage: '/images/acco-logo.png',
+    coverFit: 'contain',
   },
   {
     id: 'work-freelance',
