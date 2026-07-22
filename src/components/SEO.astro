@@ -62,6 +62,6 @@ const robotsContent = noindex ? 'noindex, nofollow' : 'index, follow';
 <!-- Structured data -->
 {
   structuredData.map((entry) => (
-    <script type="application/ld+json" set:html={JSON.stringify(entry)} />
+    <script type="application/ld+json" set:html={JSON.stringify(entry)} is:inline />
   ))
 }
